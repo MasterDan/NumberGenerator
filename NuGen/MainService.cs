@@ -17,6 +17,12 @@ namespace NuGen
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
+            ValidationResult result = _startOptions.Validate();
+            if (!result.IsSuccess)
+            {
+                Console.WriteLine(result.Message);
+                return Task.CompletedTask;
+            }
             Console.WriteLine($"Started with {_startOptions.From} - {_startOptions.To}");
             return Task.CompletedTask;
         }

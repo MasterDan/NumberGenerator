@@ -11,18 +11,18 @@ namespace NuGen.Services
 
         public IEnumerable<long> Generate(long from, long to)
         {
-            var result = new List<double>();
+            var cache = new List<double>();
             for (long i = from; i <= to; i++)
             {
                 double numb;
                 do
                 {
                     numb = _random.NextDouble();
-                } while (!result.Contains(numb));
-                result.Add(numb);
+                } while (!cache.Contains(numb));
+                cache.Add(numb);
+                var newValue = (long) (from + numb * (to - from + 1));
+                yield return newValue;
             }
-
-            return result.Select(r => (long) (from + r * (to - from + 1)));
         }
     }
 }

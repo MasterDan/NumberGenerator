@@ -1,4 +1,4 @@
-namespace NuGen
+namespace NuGen.Options.Start
 {
     public class StartOptions
     {

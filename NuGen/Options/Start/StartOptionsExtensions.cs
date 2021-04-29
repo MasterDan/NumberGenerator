@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace NuGen
+namespace NuGen.Options.Start
 {
     public static class StartOptionsExtensions
     {

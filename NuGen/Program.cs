@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using NuGen.Options.Start;
+using NuGen.Services;
 
 namespace NuGen
 {

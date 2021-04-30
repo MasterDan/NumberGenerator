@@ -5,6 +5,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using NuGen.Options.Start;
 using NuGen.Services;
+using NuGen.Services.Interfaces;
 
 namespace NuGen
 {
@@ -15,17 +16,23 @@ namespace NuGen
             Host.CreateDefaultBuilder(args).ConfigureServices((context, services) =>
             {
                 services.Configure<StartOptions>(context.Configuration);
+                services.AddScoped<IRandomGenerator, RandomGenerator>();
+                services.AddScoped<IWriterService, FileWriterService>();
                 services.AddHostedService<MainService>();
-            }).ConfigureAppConfiguration((context, config) =>
+            }).ConfigureAppConfiguration((_, configBuilder) =>
             {
                 var mappings = new Dictionary<string, string>
                 {
                     {"--from", "From"},
                     {"-f", "From"},
                     {"--to", "To"},
-                    {"-t", "To"}
+                    {"-t", "To"},
+                    {"--prefix","Prefix"},
+                    {"-p","Prefix"},
+                    {"--output","FilePath"},
+                    {"-o","FilePath"}
                 };
-                config.AddCommandLine(args, mappings);
+                configBuilder.AddCommandLine(args, mappings);
             }).RunConsoleAsync();
         }
     }

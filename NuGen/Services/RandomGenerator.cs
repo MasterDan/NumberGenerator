@@ -18,7 +18,7 @@ namespace NuGen.Services
                 do
                 {
                     numb = _random.NextDouble();
-                } while (!cache.Contains(numb));
+                } while (cache.Contains(numb));
                 cache.Add(numb);
                 var newValue = (long) (from + numb * (to - from + 1));
                 yield return newValue;

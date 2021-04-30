@@ -66,7 +66,7 @@ namespace NuGen.Services
                 foreach (var item in chunkList.ToList())
                 {
                     var line =
-                        $"{_startOptions.Prefix}{item.index + _startOptions.From:000000}-{_startOptions.Prefix}{item.number:000000}";
+                        $"{_startOptions.Prefix}{item.index + _startOptions.From:000000};{item.number:000000}";
                     await all.WriteLineAsync(line);
                     await chunkFile.WriteLineAsync(line);
                 }

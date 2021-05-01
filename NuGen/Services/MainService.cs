@@ -16,7 +16,8 @@ namespace NuGen.Services
         private readonly IRandomGenerator _randomGenerator;
         private readonly IWriterService _writerService;
 
-        public MainService(IOptions<StartOptions> startOptions, IRandomGenerator randomGenerator, IWriterService writerService)
+        public MainService(IOptions<StartOptions> startOptions, IRandomGenerator randomGenerator,
+            IWriterService writerService)
         {
             _randomGenerator = randomGenerator;
             _writerService = writerService;
@@ -31,8 +32,14 @@ namespace NuGen.Services
                 Console.WriteLine(result.Message);
                 return;
             }
-            Console.WriteLine($"Started with {_startOptions.From} - {_startOptions.To} prefix - {_startOptions.Prefix}");
-            var numbers = _randomGenerator.Generate(_startOptions.From.Value, _startOptions.To.Value).ToList();
+
+            Console.WriteLine(
+                $"Started with {_startOptions.From} - {_startOptions.To} prefix - {_startOptions.Prefix}");
+            var numbers = await _randomGenerator
+                .GenerateUniqueNumbersAsync(
+                    _startOptions.From ?? throw new Exception("_start options has not been validated"),
+                    _startOptions.To ?? throw new Exception("_start options has not been validated")
+                ).ToListAsync(cancellationToken: cancellationToken);
             Console.WriteLine("Numbers generated! Saving...");
             await _writerService.SaveAllAsync(numbers);
             Console.WriteLine("Saved!");

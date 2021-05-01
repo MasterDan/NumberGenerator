@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace NuGen.Services.Interfaces
 {
     public interface IRandomGenerator
     {
-        IEnumerable<long> Generate(long from, long to);
+        IAsyncEnumerable<long> GenerateUniqueNumbersAsync(long from, long to);
     }
 }

@@ -49,6 +49,8 @@ namespace NuGen.Services
 
         public async Task SaveAllAsync(IEnumerable<long> array)
         {
+
+            
             var list = array.Select((number, index) => new {number, index});
             CheckDirectory(FilePath);
             var chunkedArray = list.Chunk(100).ToList();

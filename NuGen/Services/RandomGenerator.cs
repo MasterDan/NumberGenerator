@@ -1,27 +1,33 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using NuGen.Services.Interfaces;
 
 namespace NuGen.Services
 {
     public class RandomGenerator : IRandomGenerator
     {
-        private readonly Random _random = new Random();
+        private readonly Random _random = new();
+        private readonly IUniqCheckService _check;
 
-        public IEnumerable<long> Generate(long from, long to)
+        public RandomGenerator(IUniqCheckService check)
         {
-            var cache = new List<double>();
+            _check = check;
+        }
+
+        public async IAsyncEnumerable<long> GenerateUniqueNumbersAsync(long from, long to)
+        {
             for (long i = from; i <= to; i++)
             {
-                double numb;
-                do
+                while (true)
                 {
-                    numb = _random.NextDouble();
-                } while (cache.Contains(numb));
-                cache.Add(numb);
-                var newValue = (long) (from + numb * (to - from + 1));
-                yield return newValue;
+                    long valueToAdd = _random.Next(0,999999);
+                    if (!await _check.CheckUniquenessAsync(valueToAdd)) 
+                        continue;
+                    yield return valueToAdd;
+                    break;
+                }
             }
         }
     }

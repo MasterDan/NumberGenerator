@@ -22,11 +22,15 @@ namespace NuGen.Services
             {
                 while (true)
                 {
-                    long valueToAdd = _random.Next(0,999999);
-                    if (!await _check.CheckUniquenessAsync(valueToAdd)) 
-                        continue;
-                    yield return valueToAdd;
-                    break;
+                    long valueToAdd = _random.Next(0, 999999);
+                    if (!await _check.CheckUniquenessAsync(valueToAdd))
+                    {
+                        yield return valueToAdd;
+                    }
+                    else
+                    {
+                        break;
+                    }
                 }
             }
         }

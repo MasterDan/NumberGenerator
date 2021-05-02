@@ -47,10 +47,30 @@ namespace NuGen.Services
             _startOptions = startOptions.Value;
         }
 
+        public async Task SaveAllAsync(IAsyncEnumerable<long> array)
+        {
+            CheckDirectory(FilePath);
+            int index = 0;
+            int chunkNumber = 0;
+            await using StreamWriter all = CreateifNotExists(AddPrefix(FilePath, "_all#"));
+
+            await foreach (var number in array)
+            {
+                if (index % _startOptions.NumbersInOneFile == 0)
+                {
+                    chunkNumber++;
+                }
+
+                await using StreamWriter chunkFile = CreateifNotExists(AddPrefix(FilePath, $"{chunkNumber}#"));
+                var line = $"{_startOptions.Prefix}{index + _startOptions.From:000000};{number:000000}";
+                await all.WriteLineAsync(line);
+                await chunkFile.WriteLineAsync(line);
+                index++;
+            }
+        }
+
         public async Task SaveAllAsync(IEnumerable<long> array)
         {
-
-            
             var list = array.Select((number, index) => new {number, index});
             CheckDirectory(FilePath);
             var chunkedArray = list.Chunk(100).ToList();

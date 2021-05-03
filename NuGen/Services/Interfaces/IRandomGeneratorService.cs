@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace NuGen.Services.Interfaces
 {
-    public interface IRandomGenerator
+    public interface IRandomGeneratorService
     {
         IAsyncEnumerable<long> GenerateUniqueNumbersAsync(long from, long to);
     }

@@ -6,12 +6,12 @@ using NuGen.Services.Interfaces;
 
 namespace NuGen.Services
 {
-    public class RandomGenerator : IRandomGenerator
+    public class RandomGeneratorService : IRandomGeneratorService
     {
         private readonly Random _random = new();
         private readonly IUniqCheckService _check;
 
-        public RandomGenerator(IUniqCheckService check)
+        public RandomGeneratorService(IUniqCheckService check)
         {
             _check = check;
         }

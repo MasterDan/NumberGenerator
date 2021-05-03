@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using Microsoft.Extensions.Options;
 using NuGen.Options.Start;
 using NuGen.Services.Interfaces;
 
@@ -7,15 +8,14 @@ namespace NuGen.Services
 {
     public class StateMonitoringService : IStateMonitoringService
     {
-        private readonly StartOptions _options;
         private readonly long _numbersToGenerate;
         private long _generated;
         private long _saved;
 
-        public StateMonitoringService(StartOptions options)
+        public StateMonitoringService(IOptions<StartOptions> options)
         {
-            _options = options;
-            _numbersToGenerate = _options.To.Value  - _options.From.Value;
+            var optionsValue = options.Value;
+            _numbersToGenerate = optionsValue.To.Value  - optionsValue.From.Value;
         }
 
         public void NumberGenerated()

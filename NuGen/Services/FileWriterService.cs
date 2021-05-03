@@ -14,15 +14,17 @@ namespace NuGen.Services
     {
         private readonly StartOptions _startOptions;
         private readonly IFileSystemService _fs;
+        private readonly IStateMonitoringService _state;
 
         private string FilePath => _startOptions.FilePath == null
             ? Path.Combine(".", $"from_{_startOptions.From}_to_{_startOptions.To}", "result.txt")
             : Path.Combine(".", _startOptions.FilePath);
 
 
-        public FileWriterService(IOptions<StartOptions> startOptions, IFileSystemService fs)
+        public FileWriterService(IOptions<StartOptions> startOptions, IFileSystemService fs, IStateMonitoringService state)
         {
             _fs = fs;
+            _state = state;
             _startOptions = startOptions.Value;
         }
 
@@ -72,6 +74,7 @@ namespace NuGen.Services
                         $"{_startOptions.Prefix}{item.index + _startOptions.From:000000};{item.number:000000}";
                     await all.WriteLineAsync(line);
                     await chunkFile.WriteLineAsync(line);
+                    _state.NumberSaved();
                 }
 
                 chunkNumber++;

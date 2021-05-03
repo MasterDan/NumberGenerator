@@ -10,10 +10,12 @@ namespace NuGen.Services
     {
         private readonly Random _random = new();
         private readonly IUniqCheckService _check;
+        private readonly IStateMonitoringService _state;
 
-        public RandomGeneratorService(IUniqCheckService check)
+        public RandomGeneratorService(IUniqCheckService check, IStateMonitoringService state)
         {
             _check = check;
+            _state = state;
         }
 
         public async IAsyncEnumerable<long> GenerateUniqueNumbersAsync(long from, long to)
@@ -25,6 +27,7 @@ namespace NuGen.Services
                     long valueToAdd = _random.Next(0, 999999);
                     if (!await _check.CheckUniquenessAsync(valueToAdd))
                     {
+                        _state.NumberGenerated();
                         yield return valueToAdd;
                     }
                     else

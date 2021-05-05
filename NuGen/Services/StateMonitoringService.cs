@@ -57,9 +57,7 @@ namespace NuGen.Services
         }
         private void WriteProgress()
         {
-            ClearCurrentConsoleLine();
             Console.WriteLine($"Generating: {generateProgress(_generated,_numbersToGenerate)}");
-            ClearCurrentConsoleLine();
             Console.WriteLine($"Saving: {generateProgress(_generated,_numbersToGenerate)}");
         }
     }

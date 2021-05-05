@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGen", "NuGen\NuGen.csproj
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Services", "Services\Services.fsproj", "{09EB7E9F-7A9B-46D5-9AFB-FB0FC43FEEB8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGen.Tests", "NuGen.Tests\NuGen.Tests.csproj", "{41D00E51-6501-47DD-9BF9-BF58D473D918}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{09EB7E9F-7A9B-46D5-9AFB-FB0FC43FEEB8}.Release|x64.Build.0 = Release|Any CPU
 		{09EB7E9F-7A9B-46D5-9AFB-FB0FC43FEEB8}.Release|x86.ActiveCfg = Release|Any CPU
 		{09EB7E9F-7A9B-46D5-9AFB-FB0FC43FEEB8}.Release|x86.Build.0 = Release|Any CPU
+		{41D00E51-6501-47DD-9BF9-BF58D473D918}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41D00E51-6501-47DD-9BF9-BF58D473D918}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41D00E51-6501-47DD-9BF9-BF58D473D918}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{41D00E51-6501-47DD-9BF9-BF58D473D918}.Debug|x64.Build.0 = Debug|Any CPU
+		{41D00E51-6501-47DD-9BF9-BF58D473D918}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{41D00E51-6501-47DD-9BF9-BF58D473D918}.Debug|x86.Build.0 = Debug|Any CPU
+		{41D00E51-6501-47DD-9BF9-BF58D473D918}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41D00E51-6501-47DD-9BF9-BF58D473D918}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41D00E51-6501-47DD-9BF9-BF58D473D918}.Release|x64.ActiveCfg = Release|Any CPU
+		{41D00E51-6501-47DD-9BF9-BF58D473D918}.Release|x64.Build.0 = Release|Any CPU
+		{41D00E51-6501-47DD-9BF9-BF58D473D918}.Release|x86.ActiveCfg = Release|Any CPU
+		{41D00E51-6501-47DD-9BF9-BF58D473D918}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

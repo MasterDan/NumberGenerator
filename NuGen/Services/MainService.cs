@@ -41,6 +41,7 @@ namespace NuGen.Services
                     _startOptions.To ?? throw new Exception("_start options has not been validated")
                 ).ToListAsync();
             await _writerService.SaveAllAsync(numbers);
+            Console.ReadLine();
         }
 
         public Task StopAsync(CancellationToken cancellationToken)

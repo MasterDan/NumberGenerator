@@ -9,6 +9,7 @@ using NuGen.Dal;
 using NuGen.Options.Start;
 using NuGen.Services;
 using NuGen.Services.Interfaces;
+using NuGen.Services.Test;
 
 namespace NuGen
 {
@@ -25,7 +26,7 @@ namespace NuGen
                 services.AddScoped<IFileSystemService, FileSystemService>();
                 services.AddScoped<IWriterService, FileWriterService>();
                 services.AddSingleton<IStateMonitoringService, StateMonitoringService>();
-                services.AddHostedService<MainService>();
+                services.AddHostedService<TestStateMonitoringHostedService>();
             }).ConfigureLogging(builder =>
             {
                 builder.SetMinimumLevel(LogLevel.Error);

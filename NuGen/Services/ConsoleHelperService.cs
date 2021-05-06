@@ -1,0 +1,20 @@
+﻿using System;
+using System.Linq;
+using NuGen.Services.Interfaces;
+
+namespace NuGen.Services
+{
+    public class ConsoleHelperService : IConsoleHelperService
+    {
+        public string GenerateProgress(long number, long of)
+        {
+            if (number == of)
+                return "DONE";
+            var percents =  number / (double) of;
+            var decade = (int) Math.Floor(percents * 10);
+            var done = Enumerable.Range(0, decade).Select((_) => "#");
+            var remains = Enumerable.Range(0, 10 - decade).Select((_) => "_");
+            return $" {number}/{of} | {string.Join("", done)}{string.Join("", remains)} | {percents*100:00} % ";
+        }
+    }
+}

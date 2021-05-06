@@ -11,11 +11,14 @@ namespace NuGen.Services
         private readonly long _numbersToGenerate;
         private long _generated;
         private long _saved;
+        private readonly IConsoleHelperService _consoleHelper;
+        
 
-        public StateMonitoringService(IOptions<StartOptions> options)
+        public StateMonitoringService(IOptions<StartOptions> options, IConsoleHelperService consoleHelper)
         {
+            _consoleHelper = consoleHelper;
             var optionsValue = options.Value;
-            _numbersToGenerate = optionsValue.To.Value  - optionsValue.From.Value;
+            _numbersToGenerate = optionsValue.To.Value - optionsValue.From.Value + 1;
         }
 
         public void NumberGenerated()
@@ -24,6 +27,7 @@ namespace NuGen.Services
             {
                 _generated++;
             }
+
             WriteProgress();
         }
 
@@ -33,32 +37,24 @@ namespace NuGen.Services
             {
                 _saved++;
             }
+
             WriteProgress();
         }
-        
+
         private void ClearCurrentConsoleLine()
         {
             int currentLineCursor = Console.CursorTop;
             Console.SetCursorPosition(0, Console.CursorTop);
-            Console.Write(new string(' ', Console.WindowWidth)); 
+            Console.Write(new string(' ', Console.WindowWidth));
             Console.SetCursorPosition(0, currentLineCursor);
         }
 
-        private string generateProgress(long number, long of)
-        {
-            if (number == of)
-                return "DONE";
-            var percents = Math.Floor((double) (number / of));
-            var decade = (int) percents * 10;
-            var done = Enumerable.Range(0, decade).Select((_)=>"#");
-            var remains = Enumerable.Range(0, 10-decade).Select((_)=>" ");
-            return $"[ {number} / {of} ] [ {string.Join("", done)}{string.Join("", remains)} ] [ {percents:P} ]";
 
-        }
+
         private void WriteProgress()
         {
-            Console.WriteLine($"Generating: {generateProgress(_generated,_numbersToGenerate)}");
-            Console.WriteLine($"Saving: {generateProgress(_generated,_numbersToGenerate)}");
+            Console.WriteLine($"Generating: {_consoleHelper.GenerateProgress(_generated, _numbersToGenerate)}");
+            Console.WriteLine($"Saving: {_consoleHelper.GenerateProgress(_generated, _numbersToGenerate)}");
         }
     }
 }

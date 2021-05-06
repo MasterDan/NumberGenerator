@@ -8,12 +8,12 @@ namespace NuGen.Services.Test
 {
     public class TestStateMonitoringHostedService : IHostedService
     {
-        private readonly IStateMonitoringService _state;
-        
-        public TestStateMonitoringHostedService(IStateMonitoringService state)
-        {
-            _state = state;
-        }
+        // private readonly IStateMonitoringService _state;
+        //
+        // public TestStateMonitoringHostedService(IStateMonitoringService state)
+        // {
+        //     _state = state;
+        // }
 
         public Task StartAsync(CancellationToken cancellationToken)
         { 
@@ -44,6 +44,7 @@ namespace NuGen.Services.Test
             //     await Task.Delay(TimeSpan.FromSeconds(1));
             //     _state.NumberSaved();
             // });
+            Console.Read();
             return Task.CompletedTask;
         }
 

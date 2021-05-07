@@ -25,7 +25,7 @@ namespace NuGen.Services
                 while (true)
                 {
                     long valueToAdd = _random.Next(0, 999999);
-                    if (!await _check.CheckUniquenessAsync(valueToAdd))
+                    if (await _check.CheckUniquenessAsync(valueToAdd))
                     {
                         _state.NumberGenerated();
                         yield return valueToAdd;

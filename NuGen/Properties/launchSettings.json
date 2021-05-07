@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "NuGen": {
+      "commandName": "Project",
+      "commandLineArgs": "-f 1 -t 10 -o ./rst/rst.txt"
+    }
+  }
+}

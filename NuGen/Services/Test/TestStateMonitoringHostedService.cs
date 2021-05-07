@@ -8,12 +8,12 @@ namespace NuGen.Services.Test
 {
     public class TestStateMonitoringHostedService : IHostedService
     {
-        // private readonly IStateMonitoringService _state;
-        //
-        // public TestStateMonitoringHostedService(IStateMonitoringService state)
-        // {
-        //     _state = state;
-        // }
+        private readonly IStateMonitoringService _state;
+        
+        public TestStateMonitoringHostedService(IStateMonitoringService state)
+        {
+            _state = state;
+        }
 
         public Task StartAsync(CancellationToken cancellationToken)
         { 

@@ -25,6 +25,7 @@ namespace NuGen
                 services.AddScoped<IUniqCheckService, UniqCheckService>();
                 services.AddScoped<IFileSystemService, FileSystemService>();
                 services.AddScoped<IWriterService, FileWriterService>();
+                services.AddScoped<IConsoleHelperService, ConsoleHelperService>();
                 services.AddSingleton<IStateMonitoringService, StateMonitoringService>();
                 services.AddHostedService<TestStateMonitoringHostedService>();
             }).ConfigureLogging(builder =>

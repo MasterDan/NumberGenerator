@@ -61,14 +61,15 @@ namespace NuGen.Services
             Console.SetCursorPosition(0, currentLineCursor);
         }
 
+        private int? _cursor = null;
+
         private void WriteProgress()
         {
-            _progressMutex.WaitOne();
-            Console.Clear();
-            Console.WriteLine(_header);
-            Console.WriteLine($"Generating: {_consoleHelper.GenerateProgress(_generated, _numbersToGenerate)}");
-            Console.WriteLine($"Saving: {_consoleHelper.GenerateProgress(_saved, _numbersToGenerate)}");
-            _progressMutex.ReleaseMutex();
+            _cursor ??= Console.CursorTop;
+            Console.SetCursorPosition(0, _cursor.Value);
+            _consoleHelper.OverwriteLine(_header);
+            _consoleHelper.OverwriteLine($"Generating: {_consoleHelper.GenerateProgress(_generated, _numbersToGenerate)}");
+            _consoleHelper.OverwriteLine($"Saving: {_consoleHelper.GenerateProgress(_saved, _numbersToGenerate)}");
         }
     }
 }

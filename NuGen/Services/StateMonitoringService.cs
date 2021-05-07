@@ -67,7 +67,7 @@ namespace NuGen.Services
             Console.Clear();
             Console.WriteLine(_header);
             Console.WriteLine($"Generating: {_consoleHelper.GenerateProgress(_generated, _numbersToGenerate)}");
-            Console.WriteLine($"Saving: {_consoleHelper.GenerateProgress(_generated, _numbersToGenerate)}");
+            Console.WriteLine($"Saving: {_consoleHelper.GenerateProgress(_saved, _numbersToGenerate)}");
             _progressMutex.ReleaseMutex();
         }
     }

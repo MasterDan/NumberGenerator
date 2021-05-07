@@ -18,24 +18,24 @@ namespace NuGen.Services.Test
         public Task StartAsync(CancellationToken cancellationToken)
         { 
             Console.WriteLine("Мы в дерьме");
-            var task1 = Task.Factory.StartNew(async () =>
+            var task1 = Task.Run(async () =>
             {
                 for (var i = 0; i < 10; i++)
                 {
-                    Console.WriteLine($"i: {i}");
-                    await Task.Delay(TimeSpan.FromSeconds(0.5));
-                   // _state.NumberGenerated();
+                    //Console.WriteLine($"i: {i}");
+                    await Task.Delay(TimeSpan.FromSeconds(0.5), cancellationToken);
+                    _state.NumberGenerated();
                 }
-            });
-            var task2 = Task.Factory.StartNew(async () =>
+            }, cancellationToken);
+            var task2 = Task.Run(async () =>
             {
                 for (var i = 0; i < 10; i++)
                 {
-                    Console.WriteLine($"i2: {i}");
-                    await Task.Delay(TimeSpan.FromSeconds(1.5));
-                    //_state.NumberSaved();
+                    //Console.WriteLine($"i2: {i}");
+                    await Task.Delay(TimeSpan.FromSeconds(1.5), cancellationToken);
+                    _state.NumberSaved();
                 }
-            });
+            }, cancellationToken);
             // Task.Factory.StartNew(async () =>
             // {
             //     _state.NumberGenerated();
@@ -47,6 +47,7 @@ namespace NuGen.Services.Test
             //     _state.NumberSaved();
             // });
             Task.WaitAll(task1,task2);
+            Console.WriteLine("Tasks Completed");
             return Task.CompletedTask;
         }
 

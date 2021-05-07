@@ -29,9 +29,6 @@ namespace NuGen.Services
                     {
                         _state.NumberGenerated();
                         yield return valueToAdd;
-                    }
-                    else
-                    {
                         break;
                     }
                 }

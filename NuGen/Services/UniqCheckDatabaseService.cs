@@ -6,11 +6,11 @@ using NuGen.Services.Interfaces;
 
 namespace NuGen.Services
 {
-    public class UniqCheckService : IUniqCheckService
+    public class UniqCheckDatabaseService : IUniqCheckService
     {
         private readonly CacheDbContext _db;
 
-        public UniqCheckService(CacheDbContext db)
+        public UniqCheckDatabaseService(CacheDbContext db)
         {
             _db = db;
         }

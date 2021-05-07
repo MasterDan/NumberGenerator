@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Threading;
 using Microsoft.Extensions.Options;
 using NuGen.Options.Start;
 using NuGen.Services.Interfaces;
@@ -8,11 +9,22 @@ namespace NuGen.Services
 {
     public class StateMonitoringService : IStateMonitoringService
     {
+        private readonly Mutex _progressMutex = new();
         private readonly long _numbersToGenerate;
         private long _generated;
         private long _saved;
         private readonly IConsoleHelperService _consoleHelper;
-        
+        private string _header = "";
+
+        public string Header
+        {
+            get => _header;
+            set
+            {
+                _header = value;
+                WriteProgress();
+            }
+        }
 
         public StateMonitoringService(IOptions<StartOptions> options, IConsoleHelperService consoleHelper)
         {
@@ -49,12 +61,14 @@ namespace NuGen.Services
             Console.SetCursorPosition(0, currentLineCursor);
         }
 
-
-
         private void WriteProgress()
         {
+            _progressMutex.WaitOne();
+            Console.Clear();
+            Console.WriteLine(_header);
             Console.WriteLine($"Generating: {_consoleHelper.GenerateProgress(_generated, _numbersToGenerate)}");
             Console.WriteLine($"Saving: {_consoleHelper.GenerateProgress(_generated, _numbersToGenerate)}");
+            _progressMutex.ReleaseMutex();
         }
     }
 }

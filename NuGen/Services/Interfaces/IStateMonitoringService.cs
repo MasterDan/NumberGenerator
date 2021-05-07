@@ -4,5 +4,6 @@ namespace NuGen.Services.Interfaces
     {
         void NumberGenerated();
         void NumberSaved();
+        string Header { get; set; }
     }
 }

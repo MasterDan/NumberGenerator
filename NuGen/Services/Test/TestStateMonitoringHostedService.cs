@@ -18,22 +18,24 @@ namespace NuGen.Services.Test
         public Task StartAsync(CancellationToken cancellationToken)
         { 
             Console.WriteLine("Мы в дерьме");
-            // Task.Factory.StartNew(async () =>
-            // {
-            //     for (var i = 0; i < 10; i++)
-            //     {
-            //         _state.NumberGenerated();
-            //         await Task.Delay(TimeSpan.FromSeconds(0.5), cancellationToken);
-            //     }
-            // }, cancellationToken);
-            // Task.Factory.StartNew(async () =>
-            // {
-            //     for (var i = 0; i < 10; i++)
-            //     {
-            //         _state.NumberSaved();
-            //         await Task.Delay(TimeSpan.FromSeconds(1.5), cancellationToken);
-            //     }
-            // }, cancellationToken);
+            var task1 = Task.Factory.StartNew(async () =>
+            {
+                for (var i = 0; i < 10; i++)
+                {
+                    Console.WriteLine($"i: {i}");
+                    await Task.Delay(TimeSpan.FromSeconds(0.5));
+                   // _state.NumberGenerated();
+                }
+            });
+            var task2 = Task.Factory.StartNew(async () =>
+            {
+                for (var i = 0; i < 10; i++)
+                {
+                    Console.WriteLine($"i2: {i}");
+                    await Task.Delay(TimeSpan.FromSeconds(1.5));
+                    //_state.NumberSaved();
+                }
+            });
             // Task.Factory.StartNew(async () =>
             // {
             //     _state.NumberGenerated();
@@ -44,7 +46,7 @@ namespace NuGen.Services.Test
             //     await Task.Delay(TimeSpan.FromSeconds(1));
             //     _state.NumberSaved();
             // });
-            Console.Read();
+            Task.WaitAll(task1,task2);
             return Task.CompletedTask;
         }
 

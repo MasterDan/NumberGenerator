@@ -5,8 +5,6 @@ VisualStudioVersion = 16.6.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGen", "NuGen\NuGen.csproj", "{A7AA8852-7598-4DA0-9FE7-674F20F411ED}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Services", "Services\Services.fsproj", "{09EB7E9F-7A9B-46D5-9AFB-FB0FC43FEEB8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGen.Tests", "NuGen.Tests\NuGen.Tests.csproj", "{41D00E51-6501-47DD-9BF9-BF58D473D918}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGen.Services", "NuGen.Services\NuGen.Services.csproj", "{CF8CC65B-F202-4BC8-A4BB-7910C7B6EEBE}"
@@ -14,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGen.Dal", "NuGen.Dal\NuGen.Dal.csproj", "{8772329C-9083-4E6C-A160-52BAE0547FC0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGen.Options", "NuGen.Options\NuGen.Options.csproj", "{BD019096-7426-4959-BF21-E97BB0B23C83}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "NuGen.Services.Fsharp", "NuGen.Services.Fsharp\NuGen.Services.Fsharp.fsproj", "{22D6389D-E791-4859-A075-152DD8906268}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,18 +40,6 @@ Global
 		{A7AA8852-7598-4DA0-9FE7-674F20F411ED}.Release|x64.Build.0 = Release|Any CPU
 		{A7AA8852-7598-4DA0-9FE7-674F20F411ED}.Release|x86.ActiveCfg = Release|Any CPU
 		{A7AA8852-7598-4DA0-9FE7-674F20F411ED}.Release|x86.Build.0 = Release|Any CPU
-		{09EB7E9F-7A9B-46D5-9AFB-FB0FC43FEEB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{09EB7E9F-7A9B-46D5-9AFB-FB0FC43FEEB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{09EB7E9F-7A9B-46D5-9AFB-FB0FC43FEEB8}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{09EB7E9F-7A9B-46D5-9AFB-FB0FC43FEEB8}.Debug|x64.Build.0 = Debug|Any CPU
-		{09EB7E9F-7A9B-46D5-9AFB-FB0FC43FEEB8}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{09EB7E9F-7A9B-46D5-9AFB-FB0FC43FEEB8}.Debug|x86.Build.0 = Debug|Any CPU
-		{09EB7E9F-7A9B-46D5-9AFB-FB0FC43FEEB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{09EB7E9F-7A9B-46D5-9AFB-FB0FC43FEEB8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{09EB7E9F-7A9B-46D5-9AFB-FB0FC43FEEB8}.Release|x64.ActiveCfg = Release|Any CPU
-		{09EB7E9F-7A9B-46D5-9AFB-FB0FC43FEEB8}.Release|x64.Build.0 = Release|Any CPU
-		{09EB7E9F-7A9B-46D5-9AFB-FB0FC43FEEB8}.Release|x86.ActiveCfg = Release|Any CPU
-		{09EB7E9F-7A9B-46D5-9AFB-FB0FC43FEEB8}.Release|x86.Build.0 = Release|Any CPU
 		{41D00E51-6501-47DD-9BF9-BF58D473D918}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{41D00E51-6501-47DD-9BF9-BF58D473D918}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41D00E51-6501-47DD-9BF9-BF58D473D918}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -100,5 +88,17 @@ Global
 		{BD019096-7426-4959-BF21-E97BB0B23C83}.Release|x64.Build.0 = Release|Any CPU
 		{BD019096-7426-4959-BF21-E97BB0B23C83}.Release|x86.ActiveCfg = Release|Any CPU
 		{BD019096-7426-4959-BF21-E97BB0B23C83}.Release|x86.Build.0 = Release|Any CPU
+		{22D6389D-E791-4859-A075-152DD8906268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22D6389D-E791-4859-A075-152DD8906268}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22D6389D-E791-4859-A075-152DD8906268}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{22D6389D-E791-4859-A075-152DD8906268}.Debug|x64.Build.0 = Debug|Any CPU
+		{22D6389D-E791-4859-A075-152DD8906268}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{22D6389D-E791-4859-A075-152DD8906268}.Debug|x86.Build.0 = Debug|Any CPU
+		{22D6389D-E791-4859-A075-152DD8906268}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22D6389D-E791-4859-A075-152DD8906268}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22D6389D-E791-4859-A075-152DD8906268}.Release|x64.ActiveCfg = Release|Any CPU
+		{22D6389D-E791-4859-A075-152DD8906268}.Release|x64.Build.0 = Release|Any CPU
+		{22D6389D-E791-4859-A075-152DD8906268}.Release|x86.ActiveCfg = Release|Any CPU
+		{22D6389D-E791-4859-A075-152DD8906268}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

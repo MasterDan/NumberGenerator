@@ -1,8 +1,8 @@
-module NuGen.Services.Fsharp.UniqCheckSimple
+module NuGen.Services.Fsharp.ServicesFsharp
 
 open NuGen.Services.Services.Interfaces
 
-type UniqCheckSimpleFsharp() =
+type UniqCheckSimple() =
     let mutable _cache = [];
     interface IUniqCheckService with
         member this.CheckUniquenessAsync(value) =

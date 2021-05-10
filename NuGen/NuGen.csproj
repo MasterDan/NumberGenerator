@@ -14,4 +14,10 @@
     <PackageReference Include="System.Linq.Async" Version="5.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NuGen.Dal\NuGen.Dal.csproj" />
+    <ProjectReference Include="..\NuGen.Options\NuGen.Options.csproj" />
+    <ProjectReference Include="..\NuGen.Services\NuGen.Services.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using NuGen.Dal;
 using NuGen.Dal.Entities;
-using NuGen.Services.Interfaces;
+using NuGen.Services.Services.Interfaces;
 
-namespace NuGen.Services
+namespace NuGen.Services.Services
 {
     public class UniqCheckDatabaseService : IUniqCheckService
     {

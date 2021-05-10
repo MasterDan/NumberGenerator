@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using NuGen.Extensions;
 using NuGen.Options.Start;
-using NuGen.Services.Interfaces;
+using NuGen.Services.Services.Interfaces;
 
-namespace NuGen.Services
+namespace NuGen.Services.Services
 {
     public class FileWriterService : IWriterService
     {

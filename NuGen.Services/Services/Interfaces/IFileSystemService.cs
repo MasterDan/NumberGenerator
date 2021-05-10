@@ -1,6 +1,6 @@
 using System.IO;
 
-namespace NuGen.Services.Interfaces
+namespace NuGen.Services.Services.Interfaces
 {
     public interface IFileSystemService
     {

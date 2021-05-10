@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -7,9 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using NuGen.Dal;
 using NuGen.Options.Start;
-using NuGen.Services;
-using NuGen.Services.Interfaces;
-using NuGen.Services.Test;
+using NuGen.Services.Services;
+using NuGen.Services.Services.Interfaces;
 
 namespace NuGen
 {

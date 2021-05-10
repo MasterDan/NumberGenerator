@@ -2,9 +2,9 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
-using NuGen.Services.Interfaces;
+using NuGen.Services.Services.Interfaces;
 
-namespace NuGen.Services.Test
+namespace NuGen.Services.Services.Test
 {
     public class TestStateMonitoringHostedService : IHostedService
     {

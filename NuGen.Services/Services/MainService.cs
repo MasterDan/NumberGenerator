@@ -1,14 +1,13 @@
 using System;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using NuGen.Options.Start;
-using NuGen.Services.Interfaces;
+using NuGen.Services.Services.Interfaces;
 
-namespace NuGen.Services
+namespace NuGen.Services.Services
 {
     public class MainService : IHostedService
     {

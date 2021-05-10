@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
-using NuGen.Services.Interfaces;
+using NuGen.Services.Services.Interfaces;
 
-namespace NuGen.Services
+namespace NuGen.Services.Services
 {
     public class ConsoleHelperService : IConsoleHelperService
     {

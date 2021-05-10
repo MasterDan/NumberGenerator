@@ -1,7 +1,7 @@
 using System.IO;
-using NuGen.Services.Interfaces;
+using NuGen.Services.Services.Interfaces;
 
-namespace NuGen.Services
+namespace NuGen.Services.Services
 {
     public class FileSystemService : IFileSystemService
     {

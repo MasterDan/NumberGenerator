@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\NuGen.Dal\NuGen.Dal.csproj" />
     <ProjectReference Include="..\NuGen.Options\NuGen.Options.csproj" />
+    <ProjectReference Include="..\NuGen.Services.Fsharp\NuGen.Services.Fsharp.fsproj" />
     <ProjectReference Include="..\NuGen.Services\NuGen.Services.csproj" />
   </ItemGroup>
 

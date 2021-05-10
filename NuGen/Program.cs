@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using NuGen.Dal;
 using NuGen.Options.Start;
+using NuGen.Services.Fsharp;
 using NuGen.Services.Services;
 using NuGen.Services.Services.Interfaces;
 
@@ -20,7 +21,7 @@ namespace NuGen
                 services.Configure<StartOptions>(context.Configuration);
                 services.AddDbContext<CacheDbContext>(builder => { builder.UseSqlite("Data Source=\"./cache.db\""); });
                 services.AddScoped<IRandomGeneratorService, RandomGeneratorService>();
-                services.AddScoped<IUniqCheckService, UniqCheckDatabaseService>();
+                services.AddScoped<IUniqCheckService, UniqCheckSimple.UniqCheckSimpleFsharp>();
                 services.AddScoped<IFileSystemService, FileSystemService>();
                 services.AddScoped<IWriterService, FileWriterService>();
                 services.AddScoped<IConsoleHelperService, ConsoleHelperService>();

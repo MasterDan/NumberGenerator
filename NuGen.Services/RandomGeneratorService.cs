@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using NuGen.Services.Services.Interfaces;
+using NuGen.Services.Interfaces;
 
-namespace NuGen.Services.Services
+namespace NuGen.Services
 {
     public class RandomGeneratorService : IRandomGeneratorService
     {

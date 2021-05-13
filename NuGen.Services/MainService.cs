@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using NuGen.Options.Start;
-using NuGen.Services.Services.Interfaces;
+using NuGen.Services.Interfaces;
 
-namespace NuGen.Services.Services
+namespace NuGen.Services
 {
     public class MainService : IHostedService
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace NuGen.Extensions
+namespace NuGen.Services.Extensions
 {
     public static class EnumerableExtensions
     {

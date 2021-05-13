@@ -1,4 +1,4 @@
-namespace NuGen.Services.Services.Interfaces
+namespace NuGen.Services.Interfaces
 {
     public interface IStateMonitoringService
     {

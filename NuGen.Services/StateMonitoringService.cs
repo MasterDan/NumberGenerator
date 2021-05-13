@@ -2,9 +2,9 @@ using System;
 using System.Threading;
 using Microsoft.Extensions.Options;
 using NuGen.Options.Start;
-using NuGen.Services.Services.Interfaces;
+using NuGen.Services.Interfaces;
 
-namespace NuGen.Services.Services
+namespace NuGen.Services
 {
     public class StateMonitoringService : IStateMonitoringService
     {

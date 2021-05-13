@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using NuGen.Services.Services.Interfaces;
+using NuGen.Services.Interfaces;
 
-namespace NuGen.Services.Services
+namespace NuGen.Services
 {
     public class SimpleUniqCheckService : IUniqCheckService
     {

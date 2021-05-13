@@ -3,11 +3,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
-using NuGen.Extensions;
 using NuGen.Options.Start;
-using NuGen.Services.Services.Interfaces;
+using NuGen.Services.Extensions;
+using NuGen.Services.Interfaces;
 
-namespace NuGen.Services.Services
+namespace NuGen.Services
 {
     public class FileWriterService : IWriterService
     {

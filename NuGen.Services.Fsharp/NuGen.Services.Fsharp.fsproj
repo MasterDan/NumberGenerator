@@ -6,6 +6,7 @@
 
     <ItemGroup>
         <Compile Include="ServicesFsharp.fs" />
+        <Compile Include="Demo.fs" />
     </ItemGroup>
 
     <ItemGroup>

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace NuGen.Services.Services.Interfaces
+namespace NuGen.Services.Interfaces
 {
     public interface IUniqCheckService
     {

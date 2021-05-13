@@ -1,6 +1,6 @@
 module NuGen.Services.Fsharp.ServicesFsharp
 
-open NuGen.Services.Services.Interfaces
+open NuGen.Services.Interfaces
 
 type UniqCheckSimple() =
     let mutable _cache = [];

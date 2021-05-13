@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NuGen.Services.Services;
-using NuGen.Services.Services.Interfaces;
+using NuGen.Services;
+using NuGen.Services.Interfaces;
 
 namespace NuGen.Tests
 {

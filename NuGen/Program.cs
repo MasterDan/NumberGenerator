@@ -6,9 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using NuGen.Dal;
 using NuGen.Options.Start;
+using NuGen.Services;
 using NuGen.Services.Fsharp;
-using NuGen.Services.Services;
-using NuGen.Services.Services.Interfaces;
+using NuGen.Services.Interfaces;
 
 namespace NuGen
 {

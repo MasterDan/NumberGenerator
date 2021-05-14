@@ -1,15 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <OutputType>Exe</OutputType>
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="ServicesFsharp.fs" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\NuGen.Services\NuGen.Services.csproj" />
+        <Compile Include="Modules\Demo.fs" />
+        <Compile Include="Program.fs" />
     </ItemGroup>
 
 </Project>

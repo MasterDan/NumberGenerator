@@ -1,4 +1,4 @@
-﻿module NuGen.Services.Fsharp.Demo
+﻿module Demo
 
 // F# is Microsofts functional language
 // It provides a way to develop predictable
@@ -551,42 +551,25 @@ let class_stuff() =
     bowser.Run
     bowser.Bark
 
-hello()
-
-bind_stuff()
-
-do_funcs()
-
-do_math()
-
-string_stuff()
-
-loop_stuff()
-
-cond_stuff()
-
-list_stuff()
-
-enum_stuff()
-
-option_stuff()
-
-tuple_stuff()
-
-record_stuff()
-
-seq_stuff()
-
-map_stuff()
-
-generic_stuff()
-
-exp_stuff()
-
-struct_stuff()
-
-class_stuff()
-
-// Keeps the console open
-// Ignore says to ignore the input
-System.Console.ReadKey() |> ignore
+let tryAll() =
+    hello()
+    bind_stuff()
+    do_funcs()
+    do_math()
+    string_stuff()
+    loop_stuff()
+    cond_stuff()
+    list_stuff()
+    enum_stuff()
+    option_stuff()
+    tuple_stuff()
+    record_stuff()
+    seq_stuff()
+    map_stuff()
+    generic_stuff()
+    exp_stuff()
+    struct_stuff()
+    class_stuff()
+    // Keeps the console open
+    // Ignore says to ignore the input
+    System.Console.ReadKey() |> ignore

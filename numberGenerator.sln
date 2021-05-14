@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGen.Options", "NuGen.Opti
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "NuGen.Services.Fsharp", "NuGen.Services.Fsharp\NuGen.Services.Fsharp.fsproj", "{22D6389D-E791-4859-A075-152DD8906268}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FsharpDemo", "FsharpDemo\FsharpDemo.fsproj", "{868A439F-79D3-46E9-B0BE-2EDF9DD5F9F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -100,5 +102,17 @@ Global
 		{22D6389D-E791-4859-A075-152DD8906268}.Release|x64.Build.0 = Release|Any CPU
 		{22D6389D-E791-4859-A075-152DD8906268}.Release|x86.ActiveCfg = Release|Any CPU
 		{22D6389D-E791-4859-A075-152DD8906268}.Release|x86.Build.0 = Release|Any CPU
+		{868A439F-79D3-46E9-B0BE-2EDF9DD5F9F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{868A439F-79D3-46E9-B0BE-2EDF9DD5F9F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{868A439F-79D3-46E9-B0BE-2EDF9DD5F9F8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{868A439F-79D3-46E9-B0BE-2EDF9DD5F9F8}.Debug|x64.Build.0 = Debug|Any CPU
+		{868A439F-79D3-46E9-B0BE-2EDF9DD5F9F8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{868A439F-79D3-46E9-B0BE-2EDF9DD5F9F8}.Debug|x86.Build.0 = Debug|Any CPU
+		{868A439F-79D3-46E9-B0BE-2EDF9DD5F9F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{868A439F-79D3-46E9-B0BE-2EDF9DD5F9F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{868A439F-79D3-46E9-B0BE-2EDF9DD5F9F8}.Release|x64.ActiveCfg = Release|Any CPU
+		{868A439F-79D3-46E9-B0BE-2EDF9DD5F9F8}.Release|x64.Build.0 = Release|Any CPU
+		{868A439F-79D3-46E9-B0BE-2EDF9DD5F9F8}.Release|x86.ActiveCfg = Release|Any CPU
+		{868A439F-79D3-46E9-B0BE-2EDF9DD5F9F8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

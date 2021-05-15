@@ -10,8 +10,8 @@ type UniqCheckSimple(opts: IOptions<StartOptions>) =
     let _cache = List()
     interface IUniqCheckService with
         member this.CheckUniquenessAsync(value) =
-            if _cache.Contains value then
+            if not (_cache.Contains value) then
                 _cache.Add value
                 async { return true } |> Async.StartAsTask
             else
-                async { return true } |> Async.StartAsTask
+                async { return false } |> Async.StartAsTask

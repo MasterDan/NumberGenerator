@@ -5,7 +5,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="ServicesFsharp.fs" />
+        <Compile Include="UniqCheckSimple.fs" />
+        <Compile Include="RandomGenerator.fs" />
     </ItemGroup>
 
     <ItemGroup>

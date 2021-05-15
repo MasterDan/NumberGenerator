@@ -21,7 +21,7 @@ namespace NuGen
                 services.Configure<StartOptions>(context.Configuration);
                 services.AddDbContext<CacheDbContext>(builder => { builder.UseSqlite("Data Source=\"./cache.db\""); });
                 services.AddScoped<IRandomGeneratorService, RandomGeneratorService>();
-                services.AddScoped<IUniqCheckService, ServicesFsharp.UniqCheckSimple>();
+                services.AddScoped<IUniqCheckService, UniqCheckSimple>();
                 services.AddScoped<IFileSystemService, FileSystemService>();
                 services.AddScoped<IWriterService, FileWriterService>();
                 services.AddScoped<IConsoleHelperService, ConsoleHelperService>();

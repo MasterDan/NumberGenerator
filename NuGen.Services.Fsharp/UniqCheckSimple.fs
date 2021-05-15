@@ -1,4 +1,4 @@
-module NuGen.Services.Fsharp.ServicesFsharp
+namespace NuGen.Services.Fsharp
 
 open System.Collections.Generic
 open Microsoft.Extensions.Options
